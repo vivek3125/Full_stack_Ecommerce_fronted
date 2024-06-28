@@ -16,8 +16,8 @@ const AppState = (props) => {
      const [userAddress,setUserAddress]=useState("");
      const [userOrder,setUserOrder]=useState([]);
 
-     // const url = "http://localhost:1000/api"
-     const url = "https://full-stack-ecommerce-api.onrender.com/api"
+     const url = "http://localhost:1000/api"
+     // const url = "https://mern-ecommerce-backend-um1o.onrender.com/api"
 
 
      useEffect(() => {
@@ -28,7 +28,7 @@ const AppState = (props) => {
                     },
                     withCredentials: true
                })
-               console.log(api.data.products)
+               // console.log(api.data.products)
                setProducts(api.data.products)
                setFilteredData(api.data.products)
                userProfile();
@@ -94,9 +94,13 @@ const AppState = (props) => {
                transition: Bounce,
           });
           // console.log("user login ",api.data)
+          if(api.data.success){
           setToken(api.data.token);
           setIsAuthenticated(true);
           localStorage.setItem('token', api.data.token)
+          }else{
+               setIsAuthenticated(false); 
+          }
           return api.data;
      }
 
@@ -296,7 +300,7 @@ const AppState = (props) => {
      };
 
 
-     console.log("user order ",userOrder)
+     // console.log("user order ",userOrder)
 
      return (
           <AppContext.Provider value={{ products, register, login, url, token, setIsAuthenticated, isAuthenticated, filteredData, setFilteredData, logout, user, addToCart, cart, decreaseQty,removeFromCart,clearCart,shippingAddress,userAddress,userOrder}}>
