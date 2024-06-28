@@ -16,8 +16,8 @@ const AppState = (props) => {
      const [userAddress,setUserAddress]=useState("");
      const [userOrder,setUserOrder]=useState([]);
 
-     const url = "http://localhost:1000/api"
-     // const url = "https://mern-ecommerce-backend-um1o.onrender.com/api"
+     // const url = "http://localhost:1000/api"
+     const url = "https://full-stack-ecommerce-api.onrender.com/api"
 
 
      useEffect(() => {
