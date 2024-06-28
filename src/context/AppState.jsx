@@ -94,9 +94,13 @@ const AppState = (props) => {
                transition: Bounce,
           });
           // console.log("user login ",api.data)
+          if(api.data.success){
           setToken(api.data.token);
           setIsAuthenticated(true);
           localStorage.setItem('token', api.data.token)
+          }else{
+               setIsAuthenticated(false); 
+          }
           return api.data;
      }
 
