@@ -40,15 +40,23 @@ function Register() {
      type="text" 
      className="form-control" 
      id="exampleInputEmail12" 
-     aria-describedby="emailHelp"/>
+     aria-describedby="emailHelp"
+     required
+     minlength="5" 
+     maxlength="20"/>
      </div>
      <div className="mb-3">
      <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
-     <input name="email" value={formData.email} onChange={onChangeHandler}  type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+     <input name="email" value={formData.email} onChange={onChangeHandler}  type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+     required
+          />
      </div>
      <div className="mb-3">
      <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-     <input name="password" value={formData.password} onChange={onChangeHandler}  type="password" className="form-control" id="exampleInputPassword1"/>
+     <input name="password" value={formData.password} onChange={onChangeHandler}  type="password" className="form-control" id="exampleInputPassword1"
+     required
+     minlength="5" 
+     maxlength="20"/>
      </div>
      <div className='d-grid col-6 mx-auto my-3'>
      <button type="submit" className="btn btn-primary">Register</button>
